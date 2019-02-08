@@ -93,7 +93,7 @@ func RouteApiV1CodetainerId(ctx *Context) error {
 	return errors.New(ctx.R.URL.String() + ": Unsupported method " + ctx.R.Method)
 }
 
-// ImageList swagger:route GET /image codetainer imageList
+// RouteApiV1CodetainerImageList; swagger:route GET /image codetainer imageList
 //
 // List all codetainer images.
 //
@@ -118,7 +118,7 @@ func RouteApiV1CodetainerImageList(ctx *Context) error {
 	}, ctx.W)
 }
 
-// ImageCreate swagger:route POST /image codetainer imageCreate
+// RouteApiV1CodetainerImageCreate; swagger:route POST /image codetainer imageCreate
 //
 // Register a Docker image to be used as a codetainer.
 //
@@ -148,7 +148,7 @@ func RouteApiV1CodetainerImageCreate(ctx *Context) error {
 	return renderJson(CodetainerImageBody{Image: img}, ctx.W)
 }
 
-// UpdateCurrentTTY swagger:route POST /codetainer/{id}/tty codetainer updateCurrentTTY
+// RouteApiV1CodetainerUpdateCurrentTTY; swagger:route POST /codetainer/{id}/tty codetainer updateCurrentTTY
 //
 // Update the codetainer TTY height and width.
 //
@@ -192,7 +192,7 @@ func RouteApiV1CodetainerUpdateCurrentTTY(ctx *Context) error {
 	}, ctx.W)
 }
 
-// GetCurrentTTY swagger:route GET /codetainer/{id}/tty codetainer getCurrentTTY
+// RouteApiV1CodetainerGetCurrentTTY; swagger:route GET /codetainer/{id}/tty codetainer getCurrentTTY
 //
 // Return the codetainer TTY height and width.
 //
@@ -234,7 +234,7 @@ func RouteApiV1CodetainerGetCurrentTTY(ctx *Context) error {
 
 }
 
-// CodetainerGet swagger:route GET /codetainer/{id} codetainer codetainerGet
+// RouteApiV1CodetainerGet; swagger:route GET /codetainer/{id} codetainer codetainerGet
 //
 // Get a codetainer
 //
@@ -264,7 +264,7 @@ func RouteApiV1CodetainerGet(ctx *Context) error {
 	return renderJson(CodetainerBody{Codetainer: codetainer}, ctx.W)
 }
 
-// CodetainerRemove swagger:route DELETE /codetainer/{id} codetainer codetainerRemove
+// RouteApiV1CodetainerRemove; swagger:route DELETE /codetainer/{id} codetainer codetainerRemove
 //
 // Remove a codetainer
 //
@@ -305,7 +305,7 @@ func RouteApiV1CodetainerRemove(ctx *Context) error {
 	return renderJson(CodetainerBody{Codetainer: codetainer}, ctx.W)
 }
 
-// CodetainerStop swagger:route POST /codetainer/{id}/stop codetainer codetainerStop
+// RouteApiV1CodetainerStop; swagger:route POST /codetainer/{id}/stop codetainer codetainerStop
 //
 // Stop a codetainer
 //
@@ -342,7 +342,7 @@ func RouteApiV1CodetainerStop(ctx *Context) error {
 	return renderJson(CodetainerBody{Codetainer: codetainer}, ctx.W)
 }
 
-// ListFiles swagger:route GET /codetainer/{id}/filescodetainer listFiles
+// RouteApiV1CodetainerFileList; swagger:route GET /codetainer/{id}/filescodetainer listFiles
 //
 // List Files in a codetainer
 //
@@ -412,7 +412,7 @@ func RouteApiV1CodetainerFileList(ctx *Context) error {
 
 }
 
-// CodetainerCreate swagger:route POST /codetainer codetainer codetainerCreate
+// RouteApiV1CodetainerCreate; swagger:route POST /codetainer codetainer codetainerCreate
 //
 // Create a new codetainer.
 //
@@ -589,7 +589,7 @@ func RouteApiV1CodetainerFileUpload(ctx *Context) error {
 	return renderJson(map[string]interface{}{"success": true}, ctx.W)
 }
 
-// SendCommand swagger:route POST /codetainer/{id}/send codetainer sendCommand
+// RouteApiV1CodetainerSend; swagger:route POST /codetainer/{id}/send codetainer sendCommand
 //
 // Send a command to a container
 //

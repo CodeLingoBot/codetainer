@@ -59,7 +59,7 @@ type Logger struct {
 	TimeFormat string
 }
 
-// NewLogger will initialize a new Logger struct
+// New will initialize a new Logger struct
 func New() *Logger {
 	return &Logger{
 		Out:        os.Stdout,
